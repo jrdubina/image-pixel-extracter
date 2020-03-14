@@ -42,11 +42,13 @@ export default class App extends React.Component {
 
 	  checkIfGolfBallExist (concepts, pictureBase64, picture) {
 	  	for (let i=0; i < concepts.length; i++) {
-        	if (concepts[i].name === "ball") {
-        		this.drawImage(pictureBase64, picture);
-        		this.drawTheCanvas(pictureBase64, picture);
-      			return;
-        	}
+			if (concepts[i].name !== "ball") {
+				continue;
+			}
+			
+			this.drawImage(pictureBase64, picture);
+			this.drawTheCanvas(pictureBase64, picture);
+			return;
         }
         alert('Cannot detect a golf ball in your image');
 	  }
