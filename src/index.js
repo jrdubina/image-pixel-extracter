@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import FileBase64 from 'react-file-base64';
 import { Base64 } from 'js-base64';
 
+// TODO: Create this to be reusable
+// TODO: Context
 export default class App extends React.Component {
 	constructor(props){
 		super(props);
@@ -22,9 +24,11 @@ export default class App extends React.Component {
 	  }
 
 	identifyImage (picture) {
+		// TODO: outside class... SOLID principles 
 		const Clarifai = require('clarifai');
 
 		const clarifaiApp = new Clarifai.App({
+			// TODO: .....seriousl? Outside class
 			apiKey: 'ba7fec128a0243c18186d47d861edb35'
 		});
 
@@ -41,11 +45,12 @@ export default class App extends React.Component {
 	  }
 
 	  checkIfGolfBallExist (concepts, pictureBase64, picture) {
+		// TODO: map
 	  	for (let i=0; i < concepts.length; i++) {
 			if (concepts[i].name !== "ball") {
 				continue;
 			}
-			
+
 			this.drawImage(pictureBase64, picture);
 			this.drawTheCanvas(pictureBase64, picture);
 			return;
@@ -71,12 +76,14 @@ export default class App extends React.Component {
 		  let pixelColors = [];
 		  let rownNumber = 0;
 		  let columnNumber = 0;
+		  // TODO: map
 		  for (let i=0; i<myData.data.length; i+=4) {
 			  let red = myData.data[i];
 			  let green = myData.data[i+1];
 			  let blue = myData.data[i+2];
 			  let alpha = myData.data[i+3]/255;
-
+			
+			  // TODO: rethink this
 			  if (i % (canvas.width*4) === 0) {
 	      		rownNumber++;
 	      	  }
