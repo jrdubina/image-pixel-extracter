@@ -15,7 +15,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "clarifai": "^2.9.0",
+    "clarifai": "^2.9.1",
     "js-base64": "^2.5.1",
     "react": "^16.8.6",
     "react-color-extractor": "^1.1.2",
